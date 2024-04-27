@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:responsive_ui_dynamic_web_mobile/features/responsive_ui_info/presentation/views/device/device.dart';
 import 'package:responsive_ui_dynamic_web_mobile/features/responsive_ui_info/presentation/views/pages/large_page.dart';
@@ -14,6 +16,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      scrollBehavior: const MaterialScrollBehavior().copyWith(
+        dragDevices: {PointerDeviceKind.mouse},
+      ),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(),
       home: const Device(
